@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Iris Prediction MLOps Practice</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta name="description" content="" />
+        <link rel="icon" href="favicon.png">
+    </head>
+    <body>
+        <div class="container" id="mainContainer">
+
+            <h1 class="text-center">Predicting Flower Species</h1>
+            <h2 class="text-center">A Toy App to Predict Species based on Sepal/Petal length and width</h2>
+
+            <label for="sepalLength" class="form-label">Sepal Length (cm): </label> <b><p id="sepalLengthText"></p></b>
+            <input type="range" class="form-range" min="4.3" max="7.9" step="0.01" id="sepalLength" oninput="updateText()">
+
+            <label for="sepalWidth" class="form-label">Sepal Width (cm)</label> <b><p id="sepalWidthText"></p></b>
+            <input type="range" class="form-range" min="2.0" max="4.4" step="0.01" id="sepalWidth" oninput="updateText()">
+
+            <label for="petalLength" class="form-label">Petal Length (cm)</label> <b><p id="petalLengthText"></p></b>
+            <input type="range" class="form-range" min="1.0" max="6.9" step="0.01" id="petalLength" oninput="updateText()">
+
+            <label for="petalWidth" class="form-label">Petal Width (cm)</label> <b><p id="petalWidthText"></p></b>
+            <input type="range" class="form-range" min="0.1" max="2.5" step="0.01" id="petalWidth" oninput="updateText()">
+
+            <p>Species Prediction: </p> <b><p id="predictionText"></p></b>
+        </div>
+        <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    </body>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</html>

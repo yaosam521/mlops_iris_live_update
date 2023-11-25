@@ -1,0 +1,9 @@
+The idea is to get a handle on how to deploy ML Models to production, Hence MLOps. 
+The idea is to start with a basic ML Model, trained on something like the iris dataset
+
+Directions:
+1. Train an ML Model on the iris dataset
+2. Pickle the Model
+3. Create an interface to classify various flowers based upon length
+4. Figure out the Web Server and writing an API to get and post to the Model
+5. Publish on Github
