@@ -3,6 +3,9 @@ from flask import render_template, request, jsonify
 import joblib
 
 species_list = ['Setosa', 'Versicolor', 'Virginica']
+    
+#Loading the pickled model gives a bunch of errors
+model = joblib.load('iris_pipeline.pkl')
 
 app = Flask(__name__)
 
@@ -17,8 +20,6 @@ def predict():
     petalLength = float(request.json['petalLength'])
     petalWidth = float(request.json['petalWidth'])
 
-    #Loading the pickled model gives a bunch of errors
-    model = joblib.load('iris_pipeline.pkl')
     prediction = model.predict([[sepalLength,sepalWidth,petalLength,petalWidth]])[0]
     return jsonify({'prediction': str(species_list[prediction])})
 
